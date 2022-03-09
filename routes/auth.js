@@ -12,7 +12,7 @@ router.get('/register', (req, res) => {
 // Handle User Registration
 router.post('/register', (req, res) => {
   const { username, password } = req.body;
-  const user = new User({ username, password });
+  const user = new User({ username });
   User.register(user, password, (err, user) => {
     if (err) {
       res.json({
